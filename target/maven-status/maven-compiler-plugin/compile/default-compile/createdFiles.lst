@@ -1,0 +1,5 @@
+com\shopflow\productservice\repository\ProductRepository.class
+com\shopflow\productservice\service\ProductService.class
+com\shopflow\productservice\controller\ProductController.class
+com\shopflow\productservice\ProductServiceApplication.class
+com\shopflow\productservice\model\Product.class
