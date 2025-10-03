@@ -6,6 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
+import com.shopflow.productservice.event.ProductCreatedEvent;
+import com.shopflow.productservice.event.ProductDeletedEvent;
+import com.shopflow.productservice.event.ProductUpdatedEvent;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,6 +25,9 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
+    private ApplicationEventPublisher eventPublisher;
+
     public List<Product> getAllProducts() {
         return productRepository.findAll();
     }
@@ -27,7 +38,9 @@ public class ProductService {
     }
 
     public Product createProduct(Product product) {
-        return productRepository.save(product);
+        Product savedProduct = productRepository.save(product);
+        eventPublisher.publishEvent(new ProductCreatedEvent(this, savedProduct));
+        return savedProduct;
     }
 
     @CachePut(value = "products", key = "#id")
@@ -37,12 +50,15 @@ public class ProductService {
         product.setDescription(productDetails.getDescription());
         product.setPrice(productDetails.getPrice());
         product.setQuantity(productDetails.getQuantity());
-        return productRepository.save(product);
+        Product updatedProduct = productRepository.save(product);
+        eventPublisher.publishEvent(new ProductUpdatedEvent(this, updatedProduct));
+        return updatedProduct;
     }
 
     @CacheEvict(value = "products", key = "#id")
     public void deleteProduct(Long id) {
         productRepository.deleteById(id);
+        eventPublisher.publishEvent(new ProductDeletedEvent(this, id));
     }
 
     public List<Product> searchProducts(String name) {
