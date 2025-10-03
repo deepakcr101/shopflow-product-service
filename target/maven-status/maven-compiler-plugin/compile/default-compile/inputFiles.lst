@@ -1,5 +1,8 @@
-c:\Users\deepak\Projects\ShopFlow_Project\product-service\src\main\java\com\shopflow\productservice\controller\ProductController.java
-c:\Users\deepak\Projects\ShopFlow_Project\product-service\src\main\java\com\shopflow\productservice\repository\ProductRepository.java
-c:\Users\deepak\Projects\ShopFlow_Project\product-service\src\main\java\com\shopflow\productservice\service\ProductService.java
-c:\Users\deepak\Projects\ShopFlow_Project\product-service\src\main\java\com\shopflow\productservice\model\Product.java
-c:\Users\deepak\Projects\ShopFlow_Project\product-service\src\main\java\com\shopflow\productservice\ProductServiceApplication.java
+C:\Users\deepak\Projects\ShopFlow_Project\shopflow-product-service\src\main\java\com\shopflow\productservice\event\ProductUpdatedEvent.java
+C:\Users\deepak\Projects\ShopFlow_Project\shopflow-product-service\src\main\java\com\shopflow\productservice\event\ProductCreatedEvent.java
+C:\Users\deepak\Projects\ShopFlow_Project\shopflow-product-service\src\main\java\com\shopflow\productservice\repository\ProductRepository.java
+C:\Users\deepak\Projects\ShopFlow_Project\shopflow-product-service\src\main\java\com\shopflow\productservice\event\ProductDeletedEvent.java
+C:\Users\deepak\Projects\ShopFlow_Project\shopflow-product-service\src\main\java\com\shopflow\productservice\service\ProductService.java
+C:\Users\deepak\Projects\ShopFlow_Project\shopflow-product-service\src\main\java\com\shopflow\productservice\model\Product.java
+C:\Users\deepak\Projects\ShopFlow_Project\shopflow-product-service\src\main\java\com\shopflow\productservice\ProductServiceApplication.java
+C:\Users\deepak\Projects\ShopFlow_Project\shopflow-product-service\src\main\java\com\shopflow\productservice\controller\ProductController.java

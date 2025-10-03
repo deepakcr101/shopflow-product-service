@@ -1,5 +1,9 @@
 com\shopflow\productservice\repository\ProductRepository.class
+com\shopflow\productservice\config\CorsConfig.class
+com\shopflow\productservice\event\ProductCreatedEvent.class
 com\shopflow\productservice\service\ProductService.class
 com\shopflow\productservice\controller\ProductController.class
+com\shopflow\productservice\event\ProductUpdatedEvent.class
 com\shopflow\productservice\ProductServiceApplication.class
+com\shopflow\productservice\event\ProductDeletedEvent.class
 com\shopflow\productservice\model\Product.class
